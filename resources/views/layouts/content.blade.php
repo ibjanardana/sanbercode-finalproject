@@ -1,0 +1,7 @@
+@yield('index')
+@yield('pertanyaan')
+@yield('tambah-pertanyaan')
+@yield('details')
+@yield('jawaban')
+@yield('komentar')
+@yield('contact')
