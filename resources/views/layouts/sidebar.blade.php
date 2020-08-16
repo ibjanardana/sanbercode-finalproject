@@ -14,7 +14,7 @@
                         <img src="{{asset('dist/img/avatar.png')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -33,13 +33,28 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{url('/pertanyaan')}}" class="nav-link">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-question-circle"></i>
                                 <p>
                                     Pertanyaan
                                 </p>
+                                <i class="fas fa-angle-left right"></i>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/index" class="nav-link">
+                                        <i class="nav-icon fas fa-table"></i>
+                                        <p>Semua Pertanyaan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/questions" class="nav-link">
+                                        <i class="fas fa-id-card-alt nav-icon"></i>
+                                        <p>Pertanyaan Saya</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>

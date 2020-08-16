@@ -10,18 +10,18 @@
                 <form>
                     <div class="form-group">
                         <label for="judul">Judul Pertanyaan</label>
-                        <input type="text" class="form-control" readonly class="form-control-plaintext" name="judul" id="judul">
+                        <input type="text" class="form-control" readonly class="form-control-plaintext" value="{{$data->title}}" id="judul">
                     </div>
                     <div class="form-group">
                         <label for="isi">Isi Pertanyaan</label>
-                        <textarea class="form-control" readonly class="form-control-plaintext" id="isi" name="isi" rows="5"></textarea>
+                        <textarea class="form-control" readonly class="form-control-plaintext" id="isi" value="" rows="5">{{$data->content}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="tag">Tag</label>
-                        <input type="text" class="form-control" readonly class="form-control-plaintext" name="tag" id="tag">
+                        <input type="text" class="form-control" readonly class="form-control-plaintext" value="{{$data->tag}}" id="tag">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-sm">Jawab</button>
-                    <button type="submit" class="btn btn-secondary btn-sm">Kembali</button>
+                    <a href="{{url('/jawaban')}}" class="btn btn-primary btn-sm">Jawab</a>
+                    <a href="{{url('/index')}}" class="btn btn-secondary btn-sm">Kembali</a>
                 </form>
             </div>
         </div>
@@ -36,8 +36,10 @@
                     @for($i = 0; $i < 5; $i++) <h6>Nama Contributor</h6>
                         <textarea class="form-control" id="jawaban" name="jawaban" rows="4"></textarea>
                         <div class="d-inline-block mb-3">
-                            <a href="" class="d-inline" id=""><small>Komentar</small></a>
-                            <a href="" class="d-inline" id=""><small>Vote</small></a>
+                            <a href="" class="d-inline pr-2" id=""><small>Komentar</small></a>
+                            <a href="" class="d-inline pr-2" id=""><small>Vote</small></a>
+                            {{-- tandai tampil utk yg punya pertanyaan --}}
+                            <a href="" class="d-inline" id=""><small>Tandai</small></a>
                         </div>
                         @endfor
                 </div>

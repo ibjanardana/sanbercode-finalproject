@@ -11,30 +11,47 @@
 |
 */
 
+// ROUTES MASTER
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
+
 Route::get('/login', function () {
     return view('login');
 });
+
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/pertanyaan', function () {
-    return view('pertanyaan');
-});
-Route::get('/tambah', function () {
-    return view('create');
-});
+
+Route::get('/index', 'HomeController@index');
+
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/details', function () {
-    return view('details');
-});
-Route::get('/jawaban', function () {
-    return view('jawaban');
-});
-Route::get('/komentar', function () {
-    return view('komentar');
+
+// ROUTES PERTANYAAN
+Route::resource('questions', 'QuestionController');
+
+// ROUTES JAWABAN
+Route::get('/jawaban/{id_pertanyaan}/tambah', 'AnswerController@create');
+
+Route::post('/jawaban', 'AnswerController@store');
+Route::get('/jawaban', 'AnswerController@index');
+
+Route::get('/jawaban/{id_jawaban}/edit', 'AnswerController@edit');
+Route::put('/jawaban/{id_jawaban}', 'AnswerController@update');
+
+Route::delete('/jawaban/{id_jawaban}', 'AnswerController@destroy');
+
+// ROUTES COMMENTS
+Route::resource('questionComments', 'QuestionCommentController');
+Route::resource('answerComments', 'AnswerCommentController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout', function() {
+    Auth::logout();
+    return redirect('/login');
 });

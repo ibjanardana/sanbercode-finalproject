@@ -1,6 +1,8 @@
 @yield('index')
 @yield('pertanyaan')
 @yield('tambah-pertanyaan')
+@yield('pertanyaan-saya')
+@yield('ubah')
 @yield('details')
 @yield('jawaban')
 @yield('komentar')

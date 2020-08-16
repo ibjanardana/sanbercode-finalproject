@@ -9,26 +9,36 @@
      </div>
      <!-- /.card-header -->
      <div class="card-body">
+        @if(session('sukses'))
+            <div class="alert alert-success">
+                {{session('sukses')}}
+            </div>
+        @endif
+        <a class="btn btn-primary" href="{{route('questions.create')}}">Buat Pertanyaan Baru</a>
          <table id="example1" class="table table-bordered table-striped">
              <thead>
                  <tr>
                      <th>#</th>
                      <th>Judul Pertanyaan</th>
                      <th>Isi Pertanyaan</th>
-                     <th>Vote</th>
-                     <th>Opsi</th>
+                     <th>Tag</th>
+                     <th>Action</th>
                  </tr>
              </thead>
              <tbody>
-                 @for($i = 0; $i < 10; $i++) <tr>
-                     <td>{{$i}}</td>
-                     <td>Camino 1.5</td>
-                     <td>OSX.3+</td>
-                     <td>1.8</td>
-                     <td>A</td>
-                     </tr>
-                     @endfor
-
+                 @forelse($data as $i => $info)
+                    <tr>
+                        <td> {{$i + 1}} </td>
+                        <td> {{$info->title}} </td>
+                        <td> {{$info->content}} </td>
+                        <td> {{$info->tag}} </td>
+                        <td> <a href="{{ route('questions.show', ['question' => $info->id]) }}" class="btn btn-info btn-sm">Details</a> </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="5" align="center">No Posts!</td>
+                    </tr>
+                @endforelse
              </tbody>
          </table>
      </div>

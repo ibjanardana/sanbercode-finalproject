@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>HomePage</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -79,20 +79,20 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body mx-auto">
+                            <img class="mt-5" id="" src="{{url('dist/img/logo-sanbercode-1.jpg')}}" alt="">
+                            <div class="text-center" style="text-align:center;">
+                                <h2>Final Project</h2>
+                                <p class="mb-5 pb-5 text-center">
+                                    Gilbert Nicholas Winata<br>
+                                    Ida Bagus Janar Dana<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
